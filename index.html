@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Viva Real</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="logo.png" alt="logo-vivaReal">
+      </div>
+      <ul>
+        <li>COMPRAR</li>
+        <li>ALUGAR</li>
+        <li>IMÓVEIS NOVOS</li>
+        <li>SELEÇÃO VIVA REAL</li>
+        <li>DESCOBRIR</li>
+        <li>FINANCIAMENTO</li>
+      </ul>
+      <ul>
+        <li>ANUNCIAR IMÓVEIS</li>
+        <li>ENTRAR</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="left-side">
+
+      <form class="left-top">
+        <label for="city">LOCALIZAÇÃO DO IMÓVEL</label>
+        <input type="text" id="city" name="city" placeholder="Digite uma cidade">
+
+        <p class="city-state" id="city-p1"></p>
+
+        <label for="tour">IMÓVEL COM</label>
+        <div class="tour">
+          <div class="btn-tour"></div>
+          <p>Tour Virtual ou Vídeos</p>
+        </div>
+
+        <label>TIPO DE IMÓVEL</label>
+        <br>
+        <div class="type">
+          <p>Mostrar todos</op>
+        </div>
+        <br>
+
+        <div class="price">
+          <div class="p-min">
+            <label for="p-min">PREÇO MÍNIMO</label>
+            <input type="text" id="p-min" name="p-min" placeholder="R$">
+          </div>
+          <div class="p-max">
+            <label for="p-max">PREÇO MÁXIMO</label>
+            <input type="text" id="p-max" name="p-max" placeholder="R$   ilimitado">
+          </div>
+        </div>
+
+        <label for="room">NÚMEROS DE QUARTOS</label>
+        <div class="btns-input">
+          <input type="button" value="1+">
+          <input type="button" value="2+">
+          <input type="button" value="3+">
+          <input type="button" value="4+">
+          <input type="button" value="5+">
+        </div>
+      </form>
+
+      <form class="left-bottom">
+        <div class="area">
+          <div class="a-min">
+            <label for="a-min">ÁREA MÍNIMA</label>
+            <input type="text" id="a-min" name="a-min" placeholder=&#13217>
+          </div>
+          <div class="a-max">
+            <label for="a-max">ÁREA MÁXIMA</label>
+            <input type="text" id="a-max" name="a-max" placeholder=&#13217>
+          </div>
+        </div>
+
+        <label for="garage">NÚMEROS DE VAGAS NA GARAGEM</label>
+        <div class="btns-input">
+          <input type="button" value="1+">
+          <input type="button" value="2+">
+          <input type="button" value="3+">
+          <input type="button" value="4+">
+          <input type="button" value="5+">
+        </div>
+
+        <label for="bathroom">NÚMEROS DE BANHEIROS</label>
+        <div class="btns-input">
+          <input type="button" value="1+">
+          <input type="button" value="2+">
+          <input type="button" value="3+">
+          <input type="button" value="4+">
+          <input type="button" value="5+">
+        </div>
+
+        <label for="sport" class="inputs-sport">LAZER E ESPORTE</label>
+        <ul class="sport">
+          <li>
+            <input type="checkbox">
+            <label>Academia</label>
+          </li>
+          <li>
+            <input type="checkbox">
+            <label>Churrasqueira</label>
+          </li>
+          <li>
+            <input type="checkbox">
+            <label>Cinema</label>
+          </li>
+          <li>
+            <input type="checkbox">
+            <label>Espaço gourmet</label>
+          </li>
+          <li>
+            <input type="checkbox">
+            <label>Espaço verde/Parque</label>
+          </li>
+          <li>
+            <input type="checkbox">
+            <label>Gramado</label>
+          </li>
+          <li>
+            <input type="checkbox">
+            <label>Jardim</label>
+          </li>
+          <li>
+            <input type="checkbox">
+            <label>Piscina</label>
+          </li>
+        </ul>
+      </form>
+    </section>
+    <section class="right-side">
+      <div class="top">
+        <ul>
+          <li>COMPRAR</li>
+          <li>ALUGAR</li>
+          <li>IMÓVEIS NOVOS</li>
+        </ul>
+      </div>
+      <div class="info">
+        <p><span class="total"></span> Imóveis à venda em <span class="city-state" id="city-span"></span></p>
+        <p class="city-state" id="city-p2"></p>
+      </div>
+      <div class="cards"></div>
+    </section>
+  </main>
+
+  <script src="index.js" type="module"></script>
+</body>
+
+</html>
