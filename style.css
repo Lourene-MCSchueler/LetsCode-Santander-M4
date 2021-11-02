@@ -94,10 +94,15 @@ main {
   line-height: 18px;
   padding: 12px;
   color: rgba(0, 0, 0, 0.87);
-  border: 0;
+  border: none;
   border-radius: 4px;
   width: 100%;
   font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+.left-top #city:focus {
+  outline: none;
+  border: 1px solid #1190cd;
 }
 
 .left-top .tour {
@@ -243,10 +248,14 @@ main {
   line-height: 45px;
 }
 
-.right-side .info p {
+.p-title {
   font-size: 24px;
   line-height: 28px;
   font-weight: 400;
+}
+
+.white {
+  display: none;
 }
 
 .right-side .info .total {
@@ -336,4 +345,20 @@ main {
   font-size: 13px;
   line-height: 19.5px;
   color: rgba(0, 0, 0, 0.87);
+}
+
+.right-side .warn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right-side .warn .err {
+  color: red;
+}
+
+.right-side .warn p {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 15px;
 }

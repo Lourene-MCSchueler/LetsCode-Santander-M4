@@ -1,46 +1,39 @@
-import { buildUrl } from './auxFunction.js';
-import { handleInput } from './events.js';
-import { createCard } from './handleHtml.js';
+import { buildUrl, handleInput } from './auxFunction.js';
+import { createCard, createWarn } from './handleHtml.js';
 
 const searchInput = document.querySelector('#city');
-
-if (!searchInput.value === '') {
-search()
-  } else {
-  window.addEventListener('load', () => {
-    const city = 'sao-paulo';
-    const state = 'sp';
-    const url = buildUrl(state, city);
-    fetchApi(url)
-});
+const cards = document.querySelector('.cards');
 
 const fetchApi = async (url) => {
-  const response = await fetch(url);
-  const result = await response.json();
-  insertCards(result);
+  try {
+    const response = await fetch(url);
+    const result = await response.json();
+    console.log(result);
+    createCard(result);
+  } catch (err) {
+    createWarn();
+  }
 };
 
 const insertCards = (data) => {
   const array = data.search.result.listings;
-  array.map((item) => createCard(item));
+  array.forEach((item) => createCard(item));
 };
 
-const search = () => {
-  return searchInput.addEventListener('keyup', (event) => {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      const valueInput = searchInput.value;
-      console.log(valueInput);
-      searchInput.value = '';
-      const resultHandleInput = handleInput(valueInput);
-      fetchApi(resultHandleInput);
-    }
-  });
-};
+searchInput.addEventListener('keyup', (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    cards.innerHTML = '';
+    const valueInput = searchInput.value;
+    searchInput.value = '';
+    const resultHandleInput = handleInput(valueInput);
+    fetchApi(resultHandleInput);
+  }
+});
 
-// window.addEventListener('load', () => {
-//   const city = 'sao-paulo';
-//   const state = 'sp';
-//   const url = buildUrl(state, city);
-//   fetchApi(url);
-// });
+window.addEventListener('load', () => {
+  const city = 'sao-paulo';
+  const state = 'sp';
+  const url = buildUrl(state, city);
+  fetchApi(url);
+});
